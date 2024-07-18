@@ -352,6 +352,84 @@ ul.experience-list li::before {
     }
 }
 
+/* Navigation toggle button */
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Hide the nav initially and show on button click */
+.nav-toggle nav {
+    display: none;
+}
+
+.nav-toggle.open nav {
+    display: block;
+}
+
+/* Example CSS for mobile toggle */
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000; /* Ensure it's above other content */
+    }
+
+    .toggle-btn:hover {
+        color: #ddd; /* Adjust color on hover if needed */
+    }
+
+    nav ul {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        position: right;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #091022; /* Adjust background color */
+        padding: 50px 20px; /* Adjust padding as needed */
+        z-index: 999; /* Ensure it's above other content */
+    }
+
+    nav ul.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    nav ul li {
+        margin-bottom: 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #ddd; /* Adjust hover color */
+    }
+}
+
 #home {
     margin-top: 0;
 }

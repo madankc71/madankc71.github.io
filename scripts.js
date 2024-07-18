@@ -4,3 +4,13 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         this.classList.add('active');
     });
 });
+
+
+// Function to toggle navigation menu visibility
+function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('active');
+}
+
+// Event listener for toggle button
+document.querySelector('.toggle-btn').addEventListener('click', toggleMenu);
