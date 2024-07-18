@@ -1,0 +1,258 @@
+/* Ensure the body and HTML take the full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #091022;
+    color: white;
+    height: 100%;
+}
+
+/* Container for the entire layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Column 1 styles */
+.column1 {
+    flex: 1 1 30%;
+    background-color: #091022;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content in column1 */
+    padding-top: 20px; /* Add padding to the top */
+}
+
+.column1-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content in column1-content */
+}
+
+.profile-image {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.column1-content p {
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    padding-top: 2rem; /* Add margin to top to move nav below */
+    text-align: left;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10;
+    margin: 20px 0 0 0; /* Add margin to move nav below */
+    display: flex;
+    flex-direction:column;
+    /* align-items: center; */
+    align-items: flex-start;
+}
+
+nav ul li {
+    margin-bottom: 10px; /* Add space between nav items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: white;
+    width: 40px; /* Initial width of the line */
+    left: -40px; /* Position the line before the text */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::before, nav ul li a.active::before {
+    width: 50px; /* Increase line width on hover */
+    left: -35px; /* Move the line along with the text */
+}
+
+nav ul li a:hover, nav ul li a.active {
+    transform: translateX(20px); /* Move right on hover */
+    color: #ddd;
+    margin-left: 10px; /* Move the hovered/active item to the right */
+}
+
+/* Column 2 styles */
+.column2 {
+    flex: 2 1 60%;
+    background-color: #091022;
+    padding: 2px;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .column1, .column2 {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .column1 {
+        height: auto;
+        position: static;
+    }
+}
+
+/* Section styles for column2 */
+.column2 section {
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    transition: box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+/* Content inside sections */
+.column2 section .content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.column2 section h1, .column2 section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.column2 section h2 i {
+    margin-right: 10px;
+    color: #f39c12; /* Optional: change icon color to match your design */
+}
+
+/* Hover effect on sections in column2 */
+.column2 section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Full height for sections */
+.full-height {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Experience item styles */
+.experience-item {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.experience-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.experience-item span {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-item ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact details styles */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.contact-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+/* Contact info styles */
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    text-align: left;
+    color: white;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+#home {
+    margin-top: 0;
+}
