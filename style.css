@@ -253,6 +253,96 @@ nav ul li a:hover, nav ul li a.active {
     text-decoration: underline;
 }
 
+ul.experience-list {
+    list-style-type: none; 
+    padding-left: 0;
+}
+
+ul.experience-list li {
+    position: relative; /* Required for positioning the pseudo-element */
+    padding-left: 1.5em; /* Space between bullet and text */
+    color: white; /* Ensure text is white */
+}
+
+ul.experience-list li::before {
+    content: "•"; /* Unicode character for bullet */
+    font-size: 1.5em; /* Adjust size of the bullet */
+    color: white; /* Bullet color */
+    position: absolute; /* Position relative to list item */
+    left: 0; /* Position on the left side */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+}
+
+/* Projects Section Styles */
+.projects-section {
+    /* padding: 10px; */
+    /* margin: 10px 0; */
+    background-color: #1c1e2b; /* Slightly different background to differentiate from the rest of the section */
+    border-radius: 8px;
+}
+
+.projects-section h2 {
+    /* font-size: 1.5em; */
+    margin-bottom: 20px;
+    color: white; /* Change color to highlight the section title */
+}
+
+/* Container for the project boxes */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between project boxes */
+    justify-content: center; /* Center the project boxes */
+}
+
+/* Individual project box styling */
+.project-box {
+    background-color: #091022; /* Background color for the project box */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    width: calc(50% - 20px); /* Adjust width to fit two boxes per row with spacing */
+    max-width: 600px; /* Ensure project boxes are not too wide */
+}
+
+.project-box h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: center;
+    color: white; /* Highlight project titles */
+}
+
+.project-box p {
+    padding: 0 15px;
+    text-align: center;
+    color: #ccc; /* Light text color for descriptions */
+}
+
+.project-box a.btn {
+    display: block;
+    background-color: #eaa93f;
+    color: #091022;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.project-box a.btn:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Zoom effect on hover */
+.project-box:hover {
+    transform: scale(1.05); /* Zoom in effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
 #home {
     margin-top: 0;
 }
