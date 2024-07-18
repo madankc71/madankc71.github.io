@@ -345,6 +345,13 @@ ul.experience-list li::before {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .project-box {
+        width: calc(100% - 20px); /* Full width minus gap */
+    }
+}
+
 #home {
     margin-top: 0;
 }
