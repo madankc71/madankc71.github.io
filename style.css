@@ -18,6 +18,14 @@ body, html {
     box-sizing: border-box;
 }
 
+/* Full height for sections */
+.full-height {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* Column 1 styles */
 .column1 {
     flex: 1 1 30%;
@@ -38,9 +46,14 @@ body, html {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centering content in column1-content */
+    /* align-items: center; Centering content in column1-content */
+    text-align: left;
 }
 
+.profile-link {
+    text-decoration: none;
+    color: inherit;
+}
 .profile-image {
     max-width: 150px;
     border-radius: 50%;
@@ -50,13 +63,10 @@ body, html {
     margin-right: auto;
 }
 
-.column1-content p {
-    text-align: center;
-}
-
 /* Navigation styles */
 nav {
     padding-top: 2rem; /* Add margin to top to move nav below */
+    padding-left: 3rem;
     text-align: left;
 }
 
@@ -66,7 +76,6 @@ nav ul {
     margin: 20px 0 0 0; /* Add margin to move nav below */
     display: flex;
     flex-direction:column;
-    /* align-items: center; */
     align-items: flex-start;
 }
 
@@ -102,8 +111,25 @@ nav ul li a:hover::before, nav ul li a.active::before {
 
 nav ul li a:hover, nav ul li a.active {
     transform: translateX(20px); /* Move right on hover */
-    color: #ddd;
+    color: white;
     margin-left: 10px; /* Move the hovered/active item to the right */
+}
+
+/* Contact section styles */
+.contact-row {
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+
+.contact-icon {
+    font-size: 20px;
 }
 
 /* Column 2 styles */
@@ -111,31 +137,16 @@ nav ul li a:hover, nav ul li a.active {
     flex: 2 1 60%;
     background-color: #091022;
     padding: 2px;
-    color: white;
+    max-width: 800px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .column1, .column2 {
-        flex: none;
-        width: 100%;
-        margin-bottom: 2px;
-    }
-
-    .column1 {
-        height: auto;
-        position: static;
-    }
+/* Content inside sections */
+.column2 section .content {
+    padding: 10px;
 }
 
-/* Section styles for column2 */
 .column2 section {
-    padding: 20px;
+    padding: 10px;
     margin: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     border-radius: 8px;
@@ -143,152 +154,70 @@ nav ul li a:hover, nav ul li a.active {
     color: white;
     transition: box-shadow 0.3s ease; /* Add transition for hover effect */
 }
-
-/* Content inside sections */
-.column2 section .content {
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.column2 section h1, .column2 section h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
+.column2 section h2 {
     margin-bottom: 20px;
     text-decoration: underline ;
 }
 
 .column2 section h2 i {
     margin-right: 10px;
-    color: #f39c12; /* Optional: change icon color to match your design */
-    text-decoration: underline ;
+    color: #f39c12;
 }
 
-/* Hover effect on sections in column2 */
-.column2 section:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+.courses {
+    font-size: 14px;
+    font-style: italic;
 }
-
-/* Full height for sections */
-.full-height {
+/* skill section */
+.skills-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+}
+
+.skill-category {
+    /* flex: 1 1 calc(50% - 20px); */
+    display: flex;
+    flex-direction: row;
+}
+
+.skill-category h3 {
+    flex: 0 0 40%;
+}
+
+.skill-category p {
+    flex: 1;
+    margin: 10px;
 }
 
 /* Experience item styles */
 .experience-item {
     text-align: left;
-    margin-bottom: 15px;
-}
-
-.experience-item h3 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.experience-item span {
-    font-size: 0.9em;
-    color: #bbb;
-}
-
-.experience-item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.experience-item ul li {
     margin-bottom: 10px;
 }
-
-/* Contact details styles */
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 0px;
-}
-
-.contact-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin: 5px 10px;
-    text-decoration: none;
-    color: white;
-}
-
-.contact-icon {
-    font-size: 24px;
-    margin-right: 8px;
-}
-
-/* Contact info styles */
-.contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-    text-align: left;
-    color: white;
-}
-
-.contact-info li {
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
 
 ul.experience-list {
     list-style-type: none; 
-    padding-left: 0;
+    padding-left: 20px;
 }
 
 ul.experience-list li {
-    position: relative; /* Required for positioning the pseudo-element */
+    position: relative;
     padding-left: 1.5em; /* Space between bullet and text */
-    color: white; /* Ensure text is white */
 }
 
 ul.experience-list li::before {
     content: "•"; /* Unicode character for bullet */
-    font-size: 1.5em; /* Adjust size of the bullet */
-    color: white; /* Bullet color */
     position: absolute; /* Position relative to list item */
     left: 0; /* Position on the left side */
-    top: 50%; /* Center vertically */
+    top: 20%; /* Center vertically */
     transform: translateY(-50%); /* Adjust vertical alignment */
 }
 
 /* Projects Section Styles */
 .projects-section {
-    /* padding: 10px; */
-    /* margin: 10px 0; */
     background-color: #1c1e2b; /* Slightly different background to differentiate from the rest of the section */
-    border-radius: 8px;
-}
-
-.projects-section h2 {
-    /* font-size: 1.5em; */
-    margin-bottom: 20px;
-    color: white; /* Change color to highlight the section title */
 }
 
 /* Container for the project boxes */
@@ -309,13 +238,6 @@ ul.experience-list li::before {
     max-width: 600px; /* Ensure project boxes are not too wide */
 }
 
-.project-box h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    text-align: center;
-    color: white; /* Highlight project titles */
-}
-
 .project-box p {
     padding: 0 15px;
     text-align: center;
@@ -326,11 +248,10 @@ ul.experience-list li::before {
     display: block;
     background-color: #eaa93f;
     color: #091022;
-    text-align: center;
     padding: 10px 15px;
     margin: 10px auto;
     border-radius: 5px;
-    text-decoration: none;
+    /* text-decoration: none; */
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
@@ -345,57 +266,27 @@ ul.experience-list li::before {
     transform: scale(1.05); /* Zoom in effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .project-box {
-        width: calc(100% - 20px); /* Full width minus gap */
-    }
-}
-
-/* Navigation toggle button */
 .toggle-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.nav-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-/* Hide the nav initially and show on button click */
-.nav-toggle nav {
     display: none;
 }
 
-.nav-toggle.open nav {
-    display: block;
-}
-
-/* Example CSS for mobile toggle */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    .toggle-btn {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1000; /* Ensure it's above other content */
+    
+    .container {
+        flex-direction: column;
+        width: 90%;
     }
 
-    .toggle-btn:hover {
-        color: #ddd; /* Adjust color on hover if needed */
+    .column1, .column2 {
+        flex: none;
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .column1 {
+        height: auto;
+        position: static;
     }
 
     nav ul {
@@ -405,18 +296,12 @@ ul.experience-list li::before {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
         background-color: #091022; /* Adjust background color */
-        padding: 50px 20px; /* Adjust padding as needed */
         z-index: 999; /* Ensure it's above other content */
     }
 
     nav ul.active {
         display: flex; /* Show nav links when active */
-    }
-
-    nav ul li {
-        margin-bottom: 15px;
     }
 
     nav ul li a {
@@ -432,11 +317,49 @@ ul.experience-list li::before {
     .contact-row {
         display: flex;
         justify-content: center;
-        margin-bottom: 0px;
+        padding-bottom: 2px;
+        margin-bottom: 2px;
+    }
+    .project-box {
+        width: calc(100% - 20px); /* Full width minus gap */
+    }
+
+    /* Navigation toggle button */
+    
+    .toggle-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        color: #ddd;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000; /* Ensure it's above other content */
+    }
+
+    .toggle-btn:hover {
+        color: #ddd; /* Adjust color on hover if needed */
+    }
+
+    .nav-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 10px; */
+    }
+
+    /* Hide the nav initially and show on button click */
+    .nav-toggle nav {
+        display: none;
+    }
+
+    .nav-toggle.open nav {
+        display: block;
     }
     
 }
-
 
 #home {
     margin-top: 0;
