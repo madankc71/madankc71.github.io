@@ -1,9 +1,148 @@
+
 @import "tailwindcss";
 
-body {
-  @apply bg-white text-dark font-sans;
+:root {
+  --primary: #1e5a8e; /* medium blue for navbar (better contrast with white text) */
+  --accent: #0f5b86; /* subtle blue accent for hover/active */
+  --muted: #6b7280; /* gray-500 */
+  --bg: #f8fafc; /* gray-50 */
+  --text: #0f172a; /* slate-900 */
 }
 
-html {
+/* Basic cross-browser reset and sensible defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
   scroll-behavior: smooth;
 }
+
+/* Ensure media elements don't overflow their containers */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements inherit fonts and remove native appearance where appropriate */
+button, input, select, textarea {
+  font-family: inherit;
+}
+button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove tap highlight on mobile browsers for smoother UI */
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure anchored sections are not hidden behind the sticky header */
+html {
+  scroll-padding-top: 6rem;
+}
+
+:target {
+  scroll-margin-top: 6rem;
+}
+
+/* Accessibility: visible focus styles for keyboard users */
+a:focus, button:focus, .btn-primary:focus {
+  outline: 3px solid rgba(7,32,58,0.18);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Help long strings wrap so content doesn't overflow */
+body, p, a, li {
+  word-break: break-word;
+}
+
+/* Typographic scale */
+h1 {
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+p {
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Tighter section spacing and constrained content */
+main > section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* center page content and constrain for readability */
+  max-width: 64rem; /* matches Tailwind max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Professional button */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+.btn-primary:hover { background-color: var(--accent); }
+
+/* Section card style for project boxes */
+.section-card {
+  background: white;
+  border: 1px solid rgba(15,23,42,0.08);
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(2,6,23,0.04);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #07574f;
+}
+
+
