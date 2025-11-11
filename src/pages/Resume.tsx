@@ -7,7 +7,7 @@ const Resume = () => (
       </p>
       <div className="flex gap-4">
       <a
-        href="/madan-portfolio/assets/Resume_Madan_KC.pdf"
+        href="/assets/Resume_Madan_KC.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="btn-primary"

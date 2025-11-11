@@ -45,7 +45,7 @@ const Navbar = () => {
           <a href="#home" className="text-lg font-semibold text-primary">Madan K C</a>
           <div className="hidden md:flex items-center gap-6 text-sm text-muted">
             <a href="mailto:madankc71@gmail.com" className="text-muted hover:text-primary">madankc71@gmail.com</a>
-            <a href="/madan-portfolio/assets/Resume_Madan_KC.pdf" className="text-muted hover:text-primary">Resume (PDF)</a>
+            <a href="/assets/Resume_Madan_KC.pdf" className="text-muted hover:text-primary">Resume (PDF)</a>
           </div>
         </div>
       </div> */}

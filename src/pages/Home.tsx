@@ -4,7 +4,7 @@ const Home = () => (
       <div className="flex-shrink-0 mb-6 md:mb-0 flex flex-col items-center mt-4">
         {/* Use uploaded profile image if available */}
         <img
-          src="/madan-portfolio/assets/profile.jpeg"
+          src="/assets/profile.jpeg"
           alt="Madan K C"
           className="w-44 h-44 md:w-48 md:h-48 rounded-full object-cover shadow-sm"
         />
